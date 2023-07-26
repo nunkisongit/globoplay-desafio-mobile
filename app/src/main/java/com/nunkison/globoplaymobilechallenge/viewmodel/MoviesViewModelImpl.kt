@@ -4,10 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nunkison.globoplaymobilechallenge.R
 import com.nunkison.globoplaymobilechallenge.project.structure.MoviesRepository
+import com.nunkison.globoplaymobilechallenge.project.structure.MoviesScreenSuccessState
 import com.nunkison.globoplaymobilechallenge.project.structure.MoviesViewModel
 import com.nunkison.globoplaymobilechallenge.project.structure.MoviesViewModel.UiState
 import com.nunkison.globoplaymobilechallenge.stringResource
-import com.nunkison.globoplaymobilechallenge.ui.movies.data.MoviesScreenSuccessState
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

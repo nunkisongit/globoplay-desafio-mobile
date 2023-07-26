@@ -1,4 +1,4 @@
-package com.nunkison.globoplaymobilechallenge.ui.movies.data
+package com.nunkison.globoplaymobilechallenge.project.structure
 
 data class MoviesScreenSuccessState(
     val favoriteFilterEnable: Boolean,

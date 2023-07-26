@@ -1,6 +1,5 @@
 package com.nunkison.globoplaymobilechallenge.project.structure
 
-import com.nunkison.globoplaymobilechallenge.ui.movies.data.MoviesScreenSuccessState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 

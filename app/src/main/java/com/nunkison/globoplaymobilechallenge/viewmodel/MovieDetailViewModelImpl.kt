@@ -3,6 +3,7 @@ package com.nunkison.globoplaymobilechallenge.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nunkison.globoplaymobilechallenge.R
+import com.nunkison.globoplaymobilechallenge.project.structure.FavoritesRepository
 import com.nunkison.globoplaymobilechallenge.project.structure.MovieDetailViewModel
 import com.nunkison.globoplaymobilechallenge.project.structure.MovieDetailViewModel.UiState
 import com.nunkison.globoplaymobilechallenge.project.structure.MoviesRepository
@@ -17,7 +18,8 @@ import kotlinx.coroutines.launch
 
 class MovieDetailViewModelImpl(
     id: String,
-    private val repo: MoviesRepository
+    private val moviesRepository: MoviesRepository,
+    private val favoritesRepository: FavoritesRepository,
 ) : ViewModel(), MovieDetailViewModel {
     private val _loadingState = MutableStateFlow(true)
     override val loadingState: StateFlow<Boolean> = _loadingState
@@ -34,7 +36,7 @@ class MovieDetailViewModelImpl(
             try {
                 _uiState.emit(
                     UiState.Success(
-                        repo.getMovie(id)
+                        moviesRepository.getMovie(id)
                     )
                 )
             } catch (e: Exception) {
@@ -56,7 +58,7 @@ class MovieDetailViewModelImpl(
                 (uiState.value as UiState.Success).let {
                     it.data?.let { mdd ->
                         if (mdd.isFavorite) {
-                            repo.removeFavorite(
+                            favoritesRepository.remove(
                                 MovieCover(
                                     id = it.data.id,
                                     name = it.data.name,
@@ -64,7 +66,7 @@ class MovieDetailViewModelImpl(
                                 )
                             )
                         } else {
-                            repo.addFavorite(
+                            favoritesRepository.add(
                                 MovieCover(
                                     id = it.data.id,
                                     name = it.data.name,

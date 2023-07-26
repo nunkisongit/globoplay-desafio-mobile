@@ -1,8 +1,8 @@
 package com.nunkison.globoplaymobilechallenge
 
+import com.nunkison.globoplaymobilechallenge.project.structure.MoviesGroup
 import com.nunkison.globoplaymobilechallenge.project.structure.MoviesRepository
 import com.nunkison.globoplaymobilechallenge.project.structure.MoviesViewModel
-import com.nunkison.globoplaymobilechallenge.ui.movies.data.MoviesGroup
 import com.nunkison.globoplaymobilechallenge.viewmodel.MoviesViewModelImpl
 import io.mockk.coEvery
 import io.mockk.coVerify

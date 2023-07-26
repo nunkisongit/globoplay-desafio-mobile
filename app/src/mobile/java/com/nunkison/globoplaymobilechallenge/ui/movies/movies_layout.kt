@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.nunkison.globoplaymobilechallenge.ui.movies.data.MoviesGroup
+import com.nunkison.globoplaymobilechallenge.project.structure.MoviesGroup
 
 @Composable
 fun MoviesLayout(
